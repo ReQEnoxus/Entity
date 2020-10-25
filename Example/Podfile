@@ -1,0 +1,6 @@
+use_frameworks!
+target 'EntityTesting' do
+  pod 'Entity', :path => '../'
+  
+  
+end
