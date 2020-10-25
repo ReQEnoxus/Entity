@@ -45,15 +45,10 @@ public class BasicTypeManager: TypeManager {
     
     private func recursiveAvailabilityCheck(_ basic: BasicType) {
         switch basic {
-        case let .custom(name), let .customArray(name):
-            guard registeredTypes[name] != nil else { fatalError("attempt to register a type with unknown custom subtype: \(name)") }
-        case let .nestedArray(basicType):
-            switch basicType {
-            case .primitive, .custom:
-                fatalError("attempt to register a nested array with non-array subtype")
-            default:
-                recursiveAvailabilityCheck(basicType)
-            }
+        case let .custom(name):
+            guard registeredTypes[name] != nil else { fatalError("attempt to register a type with unknown subtype: \(name)") }
+        case let .array(nestedType):
+            recursiveAvailabilityCheck(nestedType)
         default:
             return
         }
