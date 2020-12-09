@@ -6,8 +6,8 @@
 //
 
 public struct Type {
-    let name: String
-    let attributes: [String: BasicType]
+    public let name: String
+    public let attributes: [String: BasicType]
     
     public init(name: String, attributes: [String : BasicType]) {
         self.name = name
