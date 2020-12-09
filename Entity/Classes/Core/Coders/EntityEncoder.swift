@@ -7,6 +7,7 @@
 
 public protocol EntityEncoder {
     func encode(entity: Entity?) -> Data?
+    func encode(entities: [Entity]) -> Data?
 }
 
 public struct BasicEntityEncoder: EntityEncoder {
@@ -16,5 +17,12 @@ public struct BasicEntityEncoder: EntityEncoder {
     public func encode(entity: Entity?) -> Data? {
         guard let entity = entity else { return nil }
         return try? JSONSerialization.data(withJSONObject: entity.fields, options: .prettyPrinted)
+    }
+    
+    public func encode(entities: [Entity]) -> Data? {
+        var arrayToEncode = [[String: Any]]()
+        entities.forEach { arrayToEncode.append($0.fields) }
+        
+        return try? JSONSerialization.data(withJSONObject: arrayToEncode, options: .prettyPrinted)
     }
 }

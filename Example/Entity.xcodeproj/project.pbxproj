@@ -25,7 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		15536283EE1A40565DE46BB2 /* Entity.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Entity.podspec; path = ../Entity.podspec; sourceTree = "<group>"; };
+		15536283EE1A40565DE46BB2 /* Entity.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Entity.podspec; path = ../Entity.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		607FACE51AFB9204008FA782 /* Entity_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Entity_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
