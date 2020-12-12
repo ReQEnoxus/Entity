@@ -7,5 +7,5 @@
 
 public struct Entity {
     public let type: Type
-    public let fields: [String: Any]
+    public var fields: [String: Any]
 }
