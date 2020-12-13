@@ -17,6 +17,8 @@ public protocol TypeManager: AnyObject {
 
 public class BasicTypeManager: Codable, TypeManager {
     
+    public init() {}
+    
     private var registeredTypes: [String: Type] = [:]
     
     public var availableTypes: [Type] {
