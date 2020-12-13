@@ -5,7 +5,7 @@
 //  Created by Enoxus on 25.10.2020.
 //
 
-public struct Type {
+public struct Type: Codable {
     public let name: String
     public let attributes: [String: BasicType]
     

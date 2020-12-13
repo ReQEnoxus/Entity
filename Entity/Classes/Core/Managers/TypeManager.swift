@@ -15,11 +15,7 @@ public protocol TypeManager: AnyObject {
     var availableTypes: [Type] { get }
 }
 
-public class BasicTypeManager: TypeManager {
-    
-    public static let shared: BasicTypeManager = BasicTypeManager()
-    
-    private init() {}
+public class BasicTypeManager: Codable, TypeManager {
     
     private var registeredTypes: [String: Type] = [:]
     

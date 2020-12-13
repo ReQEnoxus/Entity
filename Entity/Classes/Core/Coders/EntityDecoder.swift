@@ -11,9 +11,11 @@ public protocol EntityDecoder {
 
 public struct BasicEntityDecoder: EntityDecoder {
     
-    public init() {}
+    public init(typeManager: TypeManager) {
+        self.typeManager = typeManager
+    }
     
-    private let typeManager: TypeManager = BasicTypeManager.shared
+    private let typeManager: TypeManager
     
     public func decode(from data: Data?, of type: Type) -> Entity? {
         guard let data = data, let json = try? JSONSerialization.jsonObject(with: data) else { return nil }
