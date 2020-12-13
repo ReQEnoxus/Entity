@@ -11,6 +11,7 @@ public protocol TypeManager: AnyObject {
     func new(named: String) -> TypeBuilder
     func type(named: String) -> Type?
     func register(type: Type)
+    func deleteType(named: String)
     
     var availableTypes: [Type] { get }
 }
@@ -39,6 +40,10 @@ public class BasicTypeManager: Codable, TypeManager {
             recursiveAvailabilityCheck(basicType)
         }
         registeredTypes[type.name] = type
+    }
+    
+    public func deleteType(named: String) {
+        registeredTypes.removeValue(forKey: named)
     }
     
     private func recursiveAvailabilityCheck(_ basic: BasicType) {
