@@ -5,7 +5,7 @@
 //  Created by Enoxus on 25.10.2020.
 //
 
-public indirect enum BasicType {
+public indirect enum BasicType: Equatable {
     case primitive(type: Primitive)
     case custom(type: String)
     case array(of: BasicType)
